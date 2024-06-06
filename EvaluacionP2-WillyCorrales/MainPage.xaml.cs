@@ -38,8 +38,13 @@
 
             File.WriteAllText(rutaArchivo, texto);
 
-            await DisplayAlert("Finalizado", "Recarga exitosa", "Ok");
-
+            bool respuesta = await DisplayAlert("Confirmación", "¿Deseas realizar la recarga?", "Sí", "No");
+            if (respuesta)
+            {
+                await DisplayAlert("Finalizado", "Recarga exitosa", "Ok");
+            }
+            else
+            { }
         }
 
         
