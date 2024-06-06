@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EvaluacionP2_WillyCorrales.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <!-- Titulo -->
+            <Label
+            Text="Ingrese el numero de Telefono"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Numero -->
+            <Entry 
+                x:Name="WCNumero"
+                Placeholder="Número telefónico"
+                VerticalOptions="Center"/>
+
+            <!-- Grid -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Operador -->
+
+                <StackLayout Padding="20" Grid.Row="0" Grid.Column="0">
+                    <Label
+                        Text="Seleccione la Operadora"
+                        FontSize="Default"
+                        SemanticProperties.HeadingLevel="Level2" />
+
+                    <Picker
+                x:Name="WCOperador"
+                VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <!-- Recargas -->
+
+                <StackLayout Padding="10" Grid.Row="0" Grid.Column="1">
+                    <Label
+                        Text="Seleccione el Valor de la recaga"
+                        FontSize="Default"
+                        SemanticProperties.HeadingLevel="Level2" />
+
+                    <RadioButton x:Name="WC3"
+                     Content="3"
+                     GroupName="recargas"
+                     CheckedChanged="RecargaSelect"/>
+
+                    <RadioButton x:Name="WC5"
+                     Content="5"
+                     GroupName="recargas"
+                     CheckedChanged="RecargaSelect"/>
+
+                    <RadioButton x:Name="WC10"
+                     Content="10"
+                     GroupName="recargas"
+                     CheckedChanged="RecargaSelect"/>
+                </StackLayout>
+            </Grid>
+
+            <!-- Confirmacion -->
+            <Label
+            Text="Ha seleccionado una recarga de "
+            x:Name="confirmacion"
+            FontSize="Default"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Buton Aceptar-->
+            <Button
+                x:Name="WCBotonRecargar"
+                Text="Recargar"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="RecargaHecha"
+               
+                />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
