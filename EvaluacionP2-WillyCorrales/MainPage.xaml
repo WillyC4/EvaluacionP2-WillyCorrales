@@ -18,7 +18,8 @@
             <Entry 
                 x:Name="WCNumero"
                 Placeholder="Número telefónico"
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                TextChanged="numero"/>
 
             <!-- Grid -->
             <Grid>

@@ -3,7 +3,8 @@
     public partial class MainPage : ContentPage
     {
         string reca = null;
-
+        string num = null;
+        
         public MainPage()
         {
             InitializeComponent();
@@ -18,7 +19,13 @@
             var recarga = sender as RadioButton;
             confirmacion.Text = $"Ha seleccionado una recarga de {recarga.Content}";
             reca = (string)recarga.Content;
+
         }
+        void numero(object sender, TextChangedEventArgs e)
+        {
+            num = e.NewTextValue;
+        }
+
 
 
         private async void RecargaHecha(object sender, EventArgs e)
@@ -27,7 +34,7 @@
 
             string texto = $"Se hizo una recarga de {reca} dólares en la siguiente fecha {fechaActual}";
 
-            string rutaArchivo = Path.Combine("E:\\Yo\\Local\\EvaluacionP2-WillyCorrales\\EvaluacionP2-WillyCorrales\\EvaluacionP2-WillyCorrales\\Resources\\Texto\\", $"{WCNumero}.txt");
+            string rutaArchivo = Path.Combine("E:\\Yo\\Local\\EvaluacionP2-WillyCorrales\\EvaluacionP2-WillyCorrales\\EvaluacionP2-WillyCorrales\\Resources\\Texto\\", $"{num}.txt");
 
             File.WriteAllText(rutaArchivo, texto);
 
